@@ -32,27 +32,27 @@ app.post("/", function(req, res){
 
     const jsonData = JSON.stringify(data);
 
-    const url = "https://us21.api.mailchimp.com/3.0/lists/blablabla";
-    const options = {
-        method: "POST",
-        auth: "user1:blablablablabla"
-    }
+//     const url = "https://us21.api.mailchimp.com/3.0/lists/blablabla";
+//     const options = {
+//         method: "POST",
+//         auth: "user1:blablablablabla"
+//     }
 
-    const request = https.request(url, options, function (response){
-        if (response.statusCode === 200) {
-            res.sendFile(__dirname+ "/success.html");
-        } else {
-            res.sendFile(__dirname+ "/failure.html");
-        }
+//     const request = https.request(url, options, function (response){
+//         if (response.statusCode === 200) {
+//             res.sendFile(__dirname+ "/success.html");
+//         } else {
+//             res.sendFile(__dirname+ "/failure.html");
+//         }
 
-        response.on("data", function (data){
-            console.log(JSON.parse(data));
-        })
-    })
+//         response.on("data", function (data){
+//             console.log(JSON.parse(data));
+//         })
+//     })
 
-    request.write(jsonData);
-    request.end();
-})
+//     request.write(jsonData);
+//     request.end();
+// })
 
 app.post("/failure", function (req, res) {
     res.redirect("/");
